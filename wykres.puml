@@ -1,0 +1,100 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+class Figura implements  Interfejs {
+
+}
+class Ujemna extends Exception {
+    Ujemna() {
+    }
+
+class Czworokat extends Figura {
+
+
+
+    protected double bok1, bok2, bok3, bok4, kont;
+
+    Czworokat(double bok1, double bok2, double bok3, double bok4, double kont) throws  Ujemna{
+
+        this.bok1 = bok1;
+        this.bok2 = bok2;
+        this.bok3 = bok3;
+        this.bok4 = bok4;
+        this.kont = kont;
+
+        if(bok1 <= 0.0 || bok2 <= 0.0 || bok3 <= 0.0 || bok4 <= 0.0 || (kont <= 0.0 || kont >= 180.0))
+        {
+            throw new Ujemna();
+        }
+
+    class Romb extends Czworokat{
+
+        Romb(double bok1, double kont) throws Ujemna{
+            super(bok1, bok1, bok1, bok1, kont * Math.PI / 180);
+            if(bok1 <= 0.0 || kont <= 0.0 || kont >= 180.0)
+            {
+                throw new Ujemna();
+            }
+
+
+class Szesciokat extends Figura {
+
+    private double bok1;
+
+    Szesciokat(double bok1) throws Ujemna{
+
+
+        this.bok1 = bok1;
+        if(bok1 <= 0.0)
+        {
+            throw new Ujemna();
+        }
+class Prostokat extends Czworokat {
+
+    Prostokat(double bok1, double bok2) throws Ujemna {
+        super(bok1, bok2, bok1, bok2, Math.PI / 2);
+
+        if(bok1 <= 0.0 || bok2 <= 0.0)
+        {
+            throw new Ujemna();
+        }
+
+class Kolo extends Figura {
+    private double prom;
+
+    Kolo(double prom) throws Ujemna{
+        this.prom = prom;
+
+        if(prom <= 0.0)
+        {
+            throw new Ujemna();
+        }
+
+class Kwadrat extends Czworokat {
+
+    Kwadrat(double bok1) throws Ujemna {
+        super(bok1, bok1,bok1, bok1, Math.PI / 2);
+
+        if(bok1 <= 0.0)
+        {
+            throw new Ujemna();
+        }
+
+        class Pieciokat extends Figura {
+
+            private double bok1;
+
+            Pieciokat(double bok1) throws Ujemna {
+
+                this.bok1 = bok1;
+
+                if(bok1 <= 0.0)
+                {
+                    throw new Ujemna();
+                }
+class Main{}
+interface Interfejs{
+    abstract public double LiczPole();
+    abstract public double LiczObwod();
+}
+
+@enduml
