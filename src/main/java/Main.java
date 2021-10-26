@@ -1,4 +1,5 @@
 //Aleksander Glowacki 26.10.2021
+// wwwwww
 public class Main{
 
     public static void main(String[] args)
